@@ -18,7 +18,7 @@ function NewTask() {
 
   return (
     <form
-      className="space-x-4 my-1.5 text-center flex items-center flex-wrap "
+      className="space-x-4 my-1.5 text-center flex items-center flex-wrap"
       onSubmit={handleSubmit}
     >
       <label
@@ -27,18 +27,21 @@ function NewTask() {
       >
         task name
       </label>
-      <input
-        ref={inputRef}
-        type="text"
-        className="bg-amber-50 rounded-3xl text-lg py-1 px-3 "
-        name="task"
-      />
-      <button
-        type="submit"
-        className="bg-amber-400 px-3.5 py-1.5 rounded-md capitalize font-bold text-stone-700"
-      >
-        submit
-      </button>
+      <div className="ml-auto flex mt-2 md:mt-0  grow gap-3">
+        {" "}
+        <input
+          ref={inputRef}
+          type="text"
+          className="bg-amber-50 rounded-3xl text-lg py-1 px-4 grow "
+          name="task"
+        />
+        <button
+          type="submit"
+          className="bg-amber-400 px-3.5 py-1.5 rounded-md capitalize font-bold text-stone-700 "
+        >
+          submit
+        </button>
+      </div>
     </form>
   );
 }
