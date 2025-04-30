@@ -5,8 +5,13 @@ import Header from "./components/Header";
 import List from "./components/List";
 import AppLayout from "./ui/AppLayout";
 import Main from "./ui/Main";
+import NewTask from "./components/NewTask";
+import { useContext } from "react";
+import { AddNewTaskContext } from "./context/AddNewTaskContext";
 
 function App() {
+  const { isAddNewTask } = useContext(AddNewTaskContext);
+
   return (
     <AppLayout>
       <Header />
@@ -15,6 +20,8 @@ function App() {
           <AddTask />
           <Filter />
         </Action>
+        {isAddNewTask && <NewTask />}
+
         <List />
       </Main>
     </AppLayout>
