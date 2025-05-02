@@ -1,13 +1,12 @@
-import { useContext } from "react";
-import { AddNewTaskContext } from "../context/AddNewTaskContext";
+import { useToDoContext } from "../context/useToDoContext";
 
 function AddTask() {
-  const { setIsAddNewTask } = useContext(AddNewTaskContext);
+  const { dispatch } = useToDoContext();
 
   return (
     <div>
       <button
-        onClick={() => setIsAddNewTask((prevState) => !prevState)}
+        onClick={() => dispatch({ type: "AddNewTask" })}
         className="bg-amber-400 px-3.5 py-1.5 rounded-md capitalize font-bold text-stone-700"
       >
         add task

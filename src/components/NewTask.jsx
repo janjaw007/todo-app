@@ -1,8 +1,7 @@
-import { useContext, useRef, useEffect } from "react";
-import { AddNewTaskContext } from "../context/AddNewTaskContext";
-
+import { useRef, useEffect } from "react";
+import { useToDoContext } from "../context/useToDoContext";
 function NewTask() {
-  const { isAddNewTask } = useContext(AddNewTaskContext);
+  const { isAddNewTask } = useToDoContext();
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -27,12 +26,12 @@ function NewTask() {
       >
         task name
       </label>
-      <div className="ml-auto flex mt-2 md:mt-0  grow gap-3">
+      <div className="ml-auto flex mt-2 md:mt-0  grow gap-3 ">
         {" "}
         <input
           ref={inputRef}
           type="text"
-          className="bg-amber-50 rounded-3xl text-lg py-1 px-4 grow "
+          className="bg-amber-50 rounded-3xl text-lg py-1 px-4 grow  "
           name="task"
         />
         <button

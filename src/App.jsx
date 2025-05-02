@@ -7,10 +7,10 @@ import AppLayout from "./ui/AppLayout";
 import Main from "./ui/Main";
 import NewTask from "./components/NewTask";
 import { useContext } from "react";
-import { AddNewTaskContext } from "./context/AddNewTaskContext";
+import { ToDoContext } from "./context/ToDoContext";
 
 function App() {
-  const { isAddNewTask } = useContext(AddNewTaskContext);
+  const { isAddNewTask } = useContext(ToDoContext);
 
   return (
     <AppLayout>
