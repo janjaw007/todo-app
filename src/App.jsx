@@ -6,11 +6,10 @@ import List from "./components/List";
 import AppLayout from "./ui/AppLayout";
 import Main from "./ui/Main";
 import NewTask from "./components/NewTask";
-import { useContext } from "react";
-import { ToDoContext } from "./context/ToDoContext";
-
+import { useToDoContext } from "./context/useToDoContext";
 function App() {
-  const { isAddNewTask } = useContext(ToDoContext);
+  const { isAddNewTask, toDo } = useToDoContext();
+  console.log(toDo);
 
   return (
     <AppLayout>

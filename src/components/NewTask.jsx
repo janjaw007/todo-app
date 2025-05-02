@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { useToDoContext } from "../context/useToDoContext";
 function NewTask() {
-  const { isAddNewTask } = useToDoContext();
+  const { isAddNewTask, dispatch } = useToDoContext();
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -12,7 +12,12 @@ function NewTask() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (inputRef.value === "") return;
+    const task = inputRef.current.value.trim();
+    if (task === "") return;
+
+    dispatch({ type: "toDo/POST", payload: task });
+
+    inputRef.current.value = "";
   }
 
   return (
