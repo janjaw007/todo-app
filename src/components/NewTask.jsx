@@ -15,7 +15,14 @@ function NewTask() {
     const task = inputRef.current.value.trim();
     if (task === "") return;
 
-    dispatch({ type: "toDo/POST", payload: task });
+    const newTask = {
+      id: Date.now(),
+      date: new Date().toLocaleDateString(),
+      task,
+      completed: false,
+    };
+
+    dispatch({ type: "toDo/POST", payload: newTask });
 
     inputRef.current.value = "";
   }

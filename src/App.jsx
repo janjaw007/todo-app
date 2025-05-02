@@ -8,8 +8,7 @@ import Main from "./ui/Main";
 import NewTask from "./components/NewTask";
 import { useToDoContext } from "./context/useToDoContext";
 function App() {
-  const { isAddNewTask, toDo } = useToDoContext();
-  console.log(toDo);
+  const { isAddNewTask } = useToDoContext();
 
   return (
     <AppLayout>
